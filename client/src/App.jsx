@@ -1,121 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
-
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
+    <div className="h-screen bg-gray-950 text-white flex flex-col">
+      
+      {/* Navbar */}
+      <div className="h-14 bg-gray-900 border-b border-gray-800 flex items-center justify-between px-6">
+        <h1 className="text-lg font-bold text-purple-400">AI Code Reviewer</h1>
+        <button className="bg-purple-600 hover:bg-purple-700 text-white text-sm px-4 py-2 rounded-lg">
+          Login with GitHub
         </button>
-      </section>
+      </div>
 
-      <div className="ticks"></div>
+      {/* Main content */}
+      <div className="flex flex-1 overflow-hidden">
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
+        {/* Left panel - Code editor */}
+        <div className="w-1/2 flex flex-col border-r border-gray-800">
+          <div className="h-10 bg-gray-900 border-b border-gray-800 flex items-center px-4">
+            <span className="text-sm text-gray-400">Code Editor</span>
+          </div>
+          <div className="flex-1 bg-gray-950 flex items-center justify-center">
+            <span className="text-gray-600">Monaco Editor goes here (Day 3)</span>
+          </div>
+          <div className="h-14 bg-gray-900 border-t border-gray-800 flex items-center px-4">
+            <button className="bg-green-600 hover:bg-green-700 text-white text-sm px-6 py-2 rounded-lg">
+              Review Code
+            </button>
+          </div>
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+        {/* Right panel - Review output */}
+        <div className="w-1/2 flex flex-col">
+          <div className="h-10 bg-gray-900 border-b border-gray-800 flex items-center px-4">
+            <span className="text-sm text-gray-400">AI Review</span>
+          </div>
+          <div className="flex-1 bg-gray-950 flex items-center justify-center">
+            <span className="text-gray-600">Review results will appear here</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
   )
 }
 
